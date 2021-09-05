@@ -15,7 +15,8 @@ public class UserController {
     @Autowired
     private RestTemplate restTemplate;
 
-    private static final String REST_URL_PREFIX = "http://localhost:8002";
+//    private static final String REST_URL_PREFIX = "http://localhost:8002";
+    private static final String REST_URL_PREFIX = "http://SPRINGCLOUD-PROVIDER-USER";
 
     @RequestMapping("/consumer/user/get/{name}")
     public User get(@PathVariable("name") String name) {
@@ -24,11 +25,11 @@ public class UserController {
 
     @RequestMapping("consumer/user/list")
     public List<User> list() {
-        return restTemplate.getForObject(REST_URL_PREFIX + "user/list", List.class);
+        return restTemplate.getForObject(REST_URL_PREFIX + "/user/list", List.class);
     }
 
     @RequestMapping("consumer/user/add")
     public boolean add(User user) {
-        return restTemplate.postForObject(REST_URL_PREFIX + "user/add", user, Boolean.class);
+        return restTemplate.postForObject(REST_URL_PREFIX + "/user/add", user, Boolean.class);
     }
 }
