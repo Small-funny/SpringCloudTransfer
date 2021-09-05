@@ -14,7 +14,7 @@ public class User implements Serializable {
     private String username;  // 主键
     private int age;
 
-    private int cla;
+    private int clazz;
 
     public User(String name) {
         this.username = name;

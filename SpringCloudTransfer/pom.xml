@@ -11,6 +11,7 @@
     <modules>
         <module>springcloud-api</module>
         <module>springcloud-povider-8002</module>
+        <module>springcloud-consumer-80</module>
     </modules>
 
     <dependencyManagement>
@@ -34,7 +35,7 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>5.1.44</version>
+                <version>5.1.47</version>
             </dependency>
 
             <dependency>

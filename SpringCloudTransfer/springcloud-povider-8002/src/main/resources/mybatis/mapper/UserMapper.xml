@@ -5,8 +5,8 @@
 
 <mapper namespace="com.jhy.dao.UserDao">
     <insert id="addUser" parameterType="User">
-        insert into user (age, class)
-        value (#{username}, DATABASE())
+        insert into user (username, age, clazz)
+        value (#{username}, #{age}, #{clazz})
     </insert>
 
     <select id="queryByName" resultType="User" parameterType="String">
