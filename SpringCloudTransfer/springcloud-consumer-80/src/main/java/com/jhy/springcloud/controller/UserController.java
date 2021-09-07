@@ -1,4 +1,4 @@
-package com.jhy.controller;
+package com.jhy.springcloud.controller;
 
 import com.jhy.springcloud.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
