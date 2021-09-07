@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class Rule {
     @Bean
     public IRule myRule() {
-        return new RandomRule();
+//        return new RandomRule();
+        return new JhyRule();
     }
 }
