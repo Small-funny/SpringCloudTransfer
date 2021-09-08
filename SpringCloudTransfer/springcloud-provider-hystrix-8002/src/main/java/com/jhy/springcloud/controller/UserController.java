@@ -2,6 +2,8 @@ package com.jhy.springcloud.controller;
 
 import com.jhy.springcloud.service.UserService;
 import com.jhy.springcloud.pojo.User;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.ribbon.proxy.annotation.Hystrix;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,14 +26,23 @@ public class UserController {
         return userService.addUser(user);
     }
 
+    @HystrixCommand(fallbackMethod = "hystrixGet")
     @GetMapping("/user/get/{name}")
     public User get(@PathVariable("name") String name) {
-        return userService.queryByName(name);
+        User user = userService.queryByName(name);
+        if (user == null) {
+            throw new RuntimeException("用户不存在 error");
+        }
+        return user;
     }
 
     @GetMapping("/user/list")
     public List<User> queryAll() {
         return userService.queryAll();
+    }
+
+    public User hystrixGet(@PathVariable("name") String name) {
+        return new User().setUsername(name).setClazz(-1).setAge(23);
     }
 
 //    @GetMapping("user/discovery")

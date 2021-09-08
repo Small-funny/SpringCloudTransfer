@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.jhy.dao.UserDao">
+<mapper namespace="com.jhy.springcloud.dao.UserDao">
     <insert id="addUser" parameterType="User">
         insert into user (username, age, clazz)
         value (#{username}, #{age}, #{clazz})

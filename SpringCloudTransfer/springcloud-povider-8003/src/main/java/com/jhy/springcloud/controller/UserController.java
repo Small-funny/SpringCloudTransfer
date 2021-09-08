@@ -1,6 +1,6 @@
 package com.jhy.springcloud.controller;
 
-import com.jhy.service.UserService;
+import com.jhy.springcloud.service.UserService;
 import com.jhy.springcloud.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
