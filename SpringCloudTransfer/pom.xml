@@ -17,6 +17,8 @@
         <module>springcloud-eureka-7003</module>
         <module>springcloud-consumer-user-feign</module>
         <module>springcloud-provider-hystrix-8002</module>
+        <module>springcloud-consumer-hystrix-dashboard</module>
+        <module>springcloud-zuul-9002</module>
     </modules>
 
     <properties>
