@@ -19,6 +19,10 @@
         <module>springcloud-provider-hystrix-8002</module>
         <module>springcloud-consumer-hystrix-dashboard</module>
         <module>springcloud-zuul-9002</module>
+        <module>springcloud-config-server-3344</module>
+        <module>springcloud-config-client</module>
+        <module>springcloud-client-3355</module>
+        <module>springcloud-config-client-3355</module>
     </modules>
 
     <properties>
